@@ -11,5 +11,6 @@ RUN git clone https://github.com/shnax0210/documents-vector-search /opt/indexer
 WORKDIR /opt/indexer
 # Install project dependencies
 RUN uv sync
+RUN uv run python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
 
 CMD ["bash"]
