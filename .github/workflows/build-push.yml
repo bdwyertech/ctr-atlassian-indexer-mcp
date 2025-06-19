@@ -53,8 +53,7 @@ jobs:
           EXISTS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
             "https://ghcr.io/v2/$REPO/manifests/$TAG" | grep -c 'errors')
           if [ "$EXISTS" = "0" ]; then
-            # DEBUG -- FLIP ME ONCE WE GET A GOOD DOCKERFILE!
-            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "exists=true" >> $GITHUB_OUTPUT
           else
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
