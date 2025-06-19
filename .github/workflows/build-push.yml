@@ -5,7 +5,8 @@ on:
     branches: [ main ]
   workflow_dispatch: # Allows manual triggering from the Actions tab
   schedule:
-    - cron: '0 3 * * *'  # Runs daily at 3:00 UTC
+    - cron: '0 3 * * 1'  # Mondays at 3:00 UTC
+    - cron: '0 3 * * 4'  # Thursdays at 3:00 UTC
 
 jobs:
   build-and-push:
